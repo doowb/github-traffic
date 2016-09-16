@@ -1,0 +1,27 @@
+{
+  "name": "github-traffic",
+  "description": "Get the Github traffic for the specified repository",
+  "version": "0.1.0",
+  "homepage": "https://github.com/sellside/github-traffic",
+  "author": "Brian Woodward (https://github.com/doowb)",
+  "repository": "sellside/github-traffic",
+  "bugs": {
+    "url": "https://github.com/sellside/github-traffic/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js",
+    "LICENSE"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "github",
+    "traffic"
+  ]
+}
