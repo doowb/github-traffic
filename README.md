@@ -18,9 +18,9 @@ var traffic = require('github-traffic');
 
 ## API
 
-### [traffic](index.js#L33)
+### [traffic](index.js#L57)
 
-Get the last 14 days of Github traffic for the specified repository.
+Get the last 14 days (this is Github's limitation) of Github traffic for the specified repository. The results will contain 4 keys (one for each of the traffic endpoints specified in the [api documentation](https://developer.github.com/v3/repos/traffic/)). See the [example results](/example-results.json) for the expanded results from the example. See the other methods below to get results for a specific endpoint.
 
 **Params**
 
@@ -43,6 +43,155 @@ var options = {
 traffic('assemble/assemble', options, function(err, results) {
   if (err) return console.error(err);
   console.log(results);
+  //=> {
+  //=>   referrers: [ ... ],
+  //=>   paths: [ ... ],
+  //=>   views: {
+  //=>     count: 4043,
+  //=>     uniques: 1155,
+  //=>     views: [ ... ]
+  //=>   },
+  //=>   clones: {
+  //=>     count: 47,
+  //=>     uniques: 38,
+  //=>     clones: [ ... ]
+  //=>   }
+  //=> }
+});
+```
+
+### [.referrers](index.js#L116)
+
+Get [referrers](https://developer.github.com/v3/repos/traffic/#list-referrers) for the specified repository from the Github traffic api.
+
+**Params**
+
+* `repo` **{String}**: Full repository to get traffic, formatted as `:owner/:repo`. If the repository is published to NPM, the NPM name may be used.
+* `options` **{Object}**: Options containing the Github authentication information. This is required since user's must be administrators on the repository to retrieve traffic information.
+* `options.username` **{String}**: Github username of the repository administrator retrieving the traffic information. This is required if an oauth token is not used.
+* `options.password` **{String}**: Github user's password of the repository administrator retrieving the traffic information. This is required if an oauth token is not used.
+* `options.token` **{String}**: Github oauth token for the repository administrator retrieving the traffic informatino. This is required if the `username/password` combination is not used.
+* `cb` **{Function}**: Optional callback function that will be called with error information or the results. When omitted a Promise is returned.
+* `returns` **{Promise}**: Promise with the traffic information when ready.
+
+**Example**
+
+```js
+var options = {
+  username: 'doowb',
+  password: '**********'
+};
+
+traffic.referrers('assemble/assemble', options, function(err, results) {
+  if (err) return console.error(err);
+  console.log(results);
+  //=> [
+  //=>   { referrer: 'Google', count: 765, uniques: 377 },
+  //=>   ...
+  //=> ],
+});
+```
+
+### [.paths](index.js#L153)
+
+Get [paths](https://developer.github.com/v3/repos/traffic/#list-paths) for the specified repository from the Github traffic api.
+
+**Params**
+
+* `repo` **{String}**: Full repository to get traffic, formatted as `:owner/:repo`. If the repository is published to NPM, the NPM name may be used.
+* `options` **{Object}**: Options containing the Github authentication information. This is required since user's must be administrators on the repository to retrieve traffic information.
+* `options.username` **{String}**: Github username of the repository administrator retrieving the traffic information. This is required if an oauth token is not used.
+* `options.password` **{String}**: Github user's password of the repository administrator retrieving the traffic information. This is required if an oauth token is not used.
+* `options.token` **{String}**: Github oauth token for the repository administrator retrieving the traffic informatino. This is required if the `username/password` combination is not used.
+* `cb` **{Function}**: Optional callback function that will be called with error information or the results. When omitted a Promise is returned.
+* `returns` **{Promise}**: Promise with the traffic information when ready.
+
+**Example**
+
+```js
+var options = {
+  username: 'doowb',
+  password: '**********'
+};
+
+traffic.paths('assemble/assemble', options, function(err, results) {
+  if (err) return console.error(err);
+  console.log(results);
+  //=> [
+  //=>   {
+  //=>     path: '/assemble/assemble',
+  //=>     title: 'GitHub - assemble/assemble: Static site generator and rapid prototyping frame...',
+  //=>     count: 1551,
+  //=>     uniques: 839
+  //=>   },
+  //=>   ...
+  //=> ],
+});
+```
+
+### [.views](index.js#L186)
+
+Get [views](https://developer.github.com/v3/repos/traffic/#views) for the specified repository from the Github traffic api.
+
+**Params**
+
+* `repo` **{String}**: Full repository to get traffic, formatted as `:owner/:repo`. If the repository is published to NPM, the NPM name may be used.
+* `options` **{Object}**: Options containing the Github authentication information. This is required since user's must be administrators on the repository to retrieve traffic information.
+* `options.username` **{String}**: Github username of the repository administrator retrieving the traffic information. This is required if an oauth token is not used.
+* `options.password` **{String}**: Github user's password of the repository administrator retrieving the traffic information. This is required if an oauth token is not used.
+* `options.token` **{String}**: Github oauth token for the repository administrator retrieving the traffic informatino. This is required if the `username/password` combination is not used.
+* `cb` **{Function}**: Optional callback function that will be called with error information or the results. When omitted a Promise is returned.
+* `returns` **{Promise}**: Promise with the traffic information when ready.
+
+**Example**
+
+```js
+var options = {
+  username: 'doowb',
+  password: '**********'
+};
+
+traffic.views('assemble/assemble', options, function(err, results) {
+  if (err) return console.error(err);
+  console.log(results);
+  //=> {
+  //=>   count: 4043,
+  //=>   uniques: 1155,
+  //=>   views: [ ... ]
+  //=> }
+});
+```
+
+### [.clones](index.js#L219)
+
+Get [clones](https://developer.github.com/v3/repos/traffic/#clones) for the specified repository from the Github traffic api.
+
+**Params**
+
+* `repo` **{String}**: Full repository to get traffic, formatted as `:owner/:repo`. If the repository is published to NPM, the NPM name may be used.
+* `options` **{Object}**: Options containing the Github authentication information. This is required since user's must be administrators on the repository to retrieve traffic information.
+* `options.username` **{String}**: Github username of the repository administrator retrieving the traffic information. This is required if an oauth token is not used.
+* `options.password` **{String}**: Github user's password of the repository administrator retrieving the traffic information. This is required if an oauth token is not used.
+* `options.token` **{String}**: Github oauth token for the repository administrator retrieving the traffic informatino. This is required if the `username/password` combination is not used.
+* `cb` **{Function}**: Optional callback function that will be called with error information or the results. When omitted a Promise is returned.
+* `returns` **{Promise}**: Promise with the traffic information when ready.
+
+**Example**
+
+```js
+var options = {
+  username: 'doowb',
+  password: '**********'
+};
+
+traffic.clones('assemble/assemble', options, function(err, results) {
+  if (err) return console.error(err);
+  console.log(results);
+  //=> {
+  //=>   count: 47,
+  //=>   uniques: 38,
+  //=>   clones: [ ... ]
+  //=> }
 });
 ```
 
