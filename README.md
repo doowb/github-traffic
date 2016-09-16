@@ -1,4 +1,4 @@
-# github-traffic [![NPM version](https://img.shields.io/npm/v/github-traffic.svg?style=flat)](https://www.npmjs.com/package/github-traffic) [![NPM downloads](https://img.shields.io/npm/dm/github-traffic.svg?style=flat)](https://npmjs.org/package/github-traffic)
+# github-traffic [![NPM version](https://img.shields.io/npm/v/github-traffic.svg?style=flat)](https://www.npmjs.com/package/github-traffic) [![NPM downloads](https://img.shields.io/npm/dm/github-traffic.svg?style=flat)](https://npmjs.org/package/github-traffic) [![Build Status](https://img.shields.io/travis/doowb/github-traffic.svg?style=flat)](https://travis-ci.org/doowb/github-traffic)
 
 Get the Github traffic for the specified repository
 
