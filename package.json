@@ -20,15 +20,47 @@
   "scripts": {
     "test": "mocha"
   },
-  "keywords": [
-    "github",
-    "traffic"
-  ],
   "dependencies": {
     "co": "^4.6.0",
     "extend-shallow": "^2.0.1",
     "get-repository-url": "^0.1.1",
     "github-base": "^0.4.1",
     "parse-github-url": "^0.3.2"
+  },
+  "devDependencies": {
+    "gulp-format-md": "^0.1.10"
+  },
+  "keywords": [
+    "api",
+    "base",
+    "github",
+    "github-api",
+    "github-base",
+    "github-traffic",
+    "traffic"
+  ],
+  "verb": {
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "related": {
+      "list": [
+        "github-base",
+        "parse-github-url",
+        "get-repository-url"
+      ]
+    },
+    "reflinks": [
+      "verb",
+      "verb-generate-readme"
+    ],
+    "lint": {
+      "reflinks": true
+    }
   }
 }
