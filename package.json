@@ -23,5 +23,11 @@
   "keywords": [
     "github",
     "traffic"
-  ]
+  ],
+  "dependencies": {
+    "extend-shallow": "^2.0.1",
+    "get-repository-url": "^0.1.1",
+    "github-base": "^0.4.1",
+    "parse-github-url": "^0.3.2"
+  }
 }
