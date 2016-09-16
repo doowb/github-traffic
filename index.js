@@ -1,5 +1,6 @@
 'use strict';
 
+var co = require('co');
 var Github = require('github-base');
 var extend = require('extend-shallow');
 var parse = require('parse-github-url');
@@ -19,49 +20,59 @@ module.exports = function(repo, options, cb) {
 
   var opts = extend(defaults, options);
   var github = new Github(opts);
-
-  var results = {};
-  resolveRepo(repo, function(err, repo) {
-    if (err) return cb(err);
-    opts.repo = repo;
-    github.get('/repos/:repo/traffic/popular/referrers', opts, function(err, referrers) {
-      if (err) return cb(err);
-      results.referrers = referrers;
-      github.get('/repos/:repo/traffic/popular/paths', opts, function(err, paths) {
+  var get = function(url, options) {
+    return function(cb) {
+      github.get(url, options, function(err, result) {
         if (err) return cb(err);
-        results.paths = paths;
-        github.get('/repos/:repo/traffic/views', opts, function(err, views) {
-          if (err) return cb(err);
-          results.views = views;
-          github.get('/repos/:repo/traffic/clones', opts, function(err, clones) {
-            if (err) return cb(err);
-            results.clones = clones;
-            cb(null, results);
-          });
-        });
+        cb(null, result);
       });
-    });
+    };
+  };
+
+  return co(function*() {
+    var results = {};
+    opts.repo = yield resolveRepo(repo);
+    results.referrers = yield get('/repos/:repo/traffic/popular/referrers', opts);
+    results.paths = yield get('/repos/:repo/traffic/popular/paths', opts);
+    results.views = yield get('/repos/:repo/traffic/views', opts);
+    results.clones = yield get('/repos/:repo/traffic/clones', opts);
+    return results;
+  })
+  .then(function(results) {
+    if (typeof cb === 'function') {
+      cb(null, results);
+      return;
+    }
+    return results;
+  }, function(err) {
+    if (typeof cb === 'function') {
+      cb(err);
+      return;
+    }
+    throw err;
   });
 };
 
-function resolveRepo(repo, cb) {
-  var parsed = {};
-  try {
-    parsed = parse(repo);
-  } catch (ignore) {}
-
-  if (parsed.owner && parsed.name) {
-    cb(null, parsed.repo);
-    return;
-  }
-
-  getUrl(repo, function(err, url) {
-    if (err) return cb(err);
+function resolveRepo(repo) {
+  return function(cb) {
+    var parsed = {};
     try {
-      parsed = parse(url);
+      parsed = parse(repo);
+    } catch (ignore) {}
+
+    if (parsed.owner && parsed.name) {
       cb(null, parsed.repo);
-    } catch (err) {
-      cb(err);
+      return;
     }
-  });
+
+    getUrl(repo, function(err, url) {
+      if (err) return cb(err);
+      try {
+        parsed = parse(url);
+        cb(null, parsed.repo);
+      } catch (err) {
+        cb(err);
+      }
+    });
+  };
 }

@@ -2,11 +2,11 @@
   "name": "github-traffic",
   "description": "Get the Github traffic for the specified repository",
   "version": "0.1.0",
-  "homepage": "https://github.com/sellside/github-traffic",
+  "homepage": "https://github.com/doowb/github-traffic",
   "author": "Brian Woodward (https://github.com/doowb)",
-  "repository": "sellside/github-traffic",
+  "repository": "doowb/github-traffic",
   "bugs": {
-    "url": "https://github.com/sellside/github-traffic/issues"
+    "url": "https://github.com/doowb/github-traffic/issues"
   },
   "license": "MIT",
   "files": [
@@ -25,6 +25,7 @@
     "traffic"
   ],
   "dependencies": {
+    "co": "^4.6.0",
     "extend-shallow": "^2.0.1",
     "get-repository-url": "^0.1.1",
     "github-base": "^0.4.1",
