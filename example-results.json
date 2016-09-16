@@ -1,0 +1,268 @@
+{
+  "referrers": [
+    {
+      "referrer": "Google",
+      "count": 765,
+      "uniques": 377
+    },
+    {
+      "referrer": "assemble.io",
+      "count": 559,
+      "uniques": 248
+    },
+    {
+      "referrer": "github.com",
+      "count": 434,
+      "uniques": 173
+    },
+    {
+      "referrer": "medium.com",
+      "count": 307,
+      "uniques": 237
+    },
+    {
+      "referrer": "npmjs.com",
+      "count": 88,
+      "uniques": 31
+    },
+    {
+      "referrer": "stackoverflow.com",
+      "count": 70,
+      "uniques": 28
+    },
+    {
+      "referrer": "ghbtns.com",
+      "count": 18,
+      "uniques": 12
+    },
+    {
+      "referrer": "webdesign.tutsplus.com",
+      "count": 14,
+      "uniques": 12
+    },
+    {
+      "referrer": "gitter.im",
+      "count": 14,
+      "uniques": 3
+    },
+    {
+      "referrer": "staticgen.com",
+      "count": 11,
+      "uniques": 9
+    }
+  ],
+  "paths": [
+    {
+      "path": "/assemble/assemble",
+      "title": "GitHub - assemble/assemble: Static site generator and rapid prototyping frame...",
+      "count": 1551,
+      "uniques": 839
+    },
+    {
+      "path": "/assemble/assemble/issues",
+      "title": "Issues · assemble/assemble · GitHub",
+      "count": 133,
+      "uniques": 38
+    },
+    {
+      "path": "/assemble/assemble/search",
+      "title": "Search Results · GitHub",
+      "count": 116,
+      "uniques": 20
+    },
+    {
+      "path": "/assemble/assemble/tree/master/examples",
+      "title": "assemble/examples at master · assemble/assemble · GitHub",
+      "count": 105,
+      "uniques": 34
+    },
+    {
+      "path": "/assemble/assemble/issues/228",
+      "title": "Is it possible to define and pass data to an Assemble partial inline? · Issue...",
+      "count": 104,
+      "uniques": 89
+    },
+    {
+      "path": "/assemble/assemble/issues/894",
+      "title": "Partial with custom layout not rendering in to {% body %} - empty buffer?... ...",
+      "count": 55,
+      "uniques": 11
+    },
+    {
+      "path": "/assemble/assemble/tree/master/examples/blog",
+      "title": "assemble/examples/blog at master · assemble/assemble · GitHub",
+      "count": 53,
+      "uniques": 24
+    },
+    {
+      "path": "/assemble/assemble/tree/master/docs",
+      "title": "assemble/docs at master · assemble/assemble · GitHub",
+      "count": 43,
+      "uniques": 31
+    },
+    {
+      "path": "/assemble/assemble/issues/758",
+      "title": "Lodash Templates/Variables not processed in YFM for .hbs files · Issue #758 ·...",
+      "count": 39,
+      "uniques": 6
+    },
+    {
+      "path": "/assemble/assemble/tree/master/examples/blog/src",
+      "title": "assemble/examples/blog/src at master · assemble/assemble · GitHub",
+      "count": 35,
+      "uniques": 11
+    }
+  ],
+  "views": {
+    "count": 4043,
+    "uniques": 1155,
+    "views": [
+      {
+        "timestamp": 1472774400000,
+        "count": 25,
+        "uniques": 11
+      },
+      {
+        "timestamp": 1472860800000,
+        "count": 243,
+        "uniques": 99
+      },
+      {
+        "timestamp": 1472947200000,
+        "count": 372,
+        "uniques": 64
+      },
+      {
+        "timestamp": 1473033600000,
+        "count": 301,
+        "uniques": 114
+      },
+      {
+        "timestamp": 1473120000000,
+        "count": 365,
+        "uniques": 120
+      },
+      {
+        "timestamp": 1473206400000,
+        "count": 390,
+        "uniques": 141
+      },
+      {
+        "timestamp": 1473292800000,
+        "count": 362,
+        "uniques": 149
+      },
+      {
+        "timestamp": 1473379200000,
+        "count": 327,
+        "uniques": 122
+      },
+      {
+        "timestamp": 1473465600000,
+        "count": 222,
+        "uniques": 53
+      },
+      {
+        "timestamp": 1473552000000,
+        "count": 116,
+        "uniques": 43
+      },
+      {
+        "timestamp": 1473638400000,
+        "count": 306,
+        "uniques": 104
+      },
+      {
+        "timestamp": 1473724800000,
+        "count": 392,
+        "uniques": 111
+      },
+      {
+        "timestamp": 1473811200000,
+        "count": 223,
+        "uniques": 94
+      },
+      {
+        "timestamp": 1473897600000,
+        "count": 196,
+        "uniques": 96
+      },
+      {
+        "timestamp": 1473984000000,
+        "count": 203,
+        "uniques": 68
+      }
+    ]
+  },
+  "clones": {
+    "count": 47,
+    "uniques": 38,
+    "clones": [
+      {
+        "timestamp": 1472860800000,
+        "count": 5,
+        "uniques": 4
+      },
+      {
+        "timestamp": 1472947200000,
+        "count": 2,
+        "uniques": 2
+      },
+      {
+        "timestamp": 1473033600000,
+        "count": 2,
+        "uniques": 2
+      },
+      {
+        "timestamp": 1473120000000,
+        "count": 2,
+        "uniques": 2
+      },
+      {
+        "timestamp": 1473206400000,
+        "count": 2,
+        "uniques": 2
+      },
+      {
+        "timestamp": 1473292800000,
+        "count": 2,
+        "uniques": 2
+      },
+      {
+        "timestamp": 1473379200000,
+        "count": 4,
+        "uniques": 4
+      },
+      {
+        "timestamp": 1473465600000,
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "timestamp": 1473552000000,
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "timestamp": 1473638400000,
+        "count": 5,
+        "uniques": 5
+      },
+      {
+        "timestamp": 1473724800000,
+        "count": 8,
+        "uniques": 5
+      },
+      {
+        "timestamp": 1473811200000,
+        "count": 7,
+        "uniques": 4
+      },
+      {
+        "timestamp": 1473897600000,
+        "count": 6,
+        "uniques": 6
+      }
+    ]
+  }
+}
